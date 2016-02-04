@@ -1,6 +1,6 @@
 function varargout = randraw(distribName, distribParams, varargin)
 %
-%   EFFICIENT RANDOM VARIATES GENERATOR
+%   GERADOR DE VARIAVEIS ALEATORIAS
 % 
 % See alphabetical list of the supported distributions below (over 50 distributions)
 % 
@@ -12,78 +12,6 @@ function varargout = randraw(distribName, distribParams, varargin)
 % 3)  Y = randraw( distribName, distribParams, sampleSize );
 %           returns array Y of size = sampleSize of random variates from distribName  
 %           distribution with parameters distribParams
-
-%  Version 2.0 - August 2007
-%         1) New distributions support: Nakagami and Rician !
-%         2) Small typo corrections in comments
-%  Version 1.8 - February 2007
-%         GIG distribution (thanks to Mr. Demetris Lamnisos)
-%           Computational exceptions in the reparameterized GIG generation were fixed
-%  Version 1.7 - December 2006
-%         GIG distribution (thanks to Dr. Junbin Gao)
-%           Computational exceptions in the reparameterized GIG generation were fixed
-%  Version 1.6 - September 2006
-%         Exception handling: BINOMIAL distribution - special case for n*p~=0 
-%         Geometric distibution: additional note in help section 
-%  Version 1.5 - December 2005
-%        'true' and 'false' functions were replased by ones and zeros to support Matlab releases 
-%         below 6.5
-%  Version 1.4 - September 2005 -
-%      Bugs fix:
-%        1) GAMMA distribution (thanks to Earl Lawrence):
-%             special case for a<1
-%        2) GIG distribution (thanks to Panagiotis Braimakis):
-%            typo in help 
-%            code adjustment to overcome possible computational overflows
-%        3) CHI SQUARE distribution
-%            typo in help
-%  Version 1.3 - July 2005 -
-%      Bug fix:
-%         Typo in GIG distribution generation:
-%         should be 'out' instead of 'x' in lines 1852 and 1858 
-%  Version 1.2 - May 2005  -   
-%      Bugs fix: 
-%        1) Poisson distribution did not work for lambda < 21.4. Typo ( ti instead of t )
-%        2) GIG distribution:  support to chi=0 or psi=0 cases
-%        3) Beta distribution: column sampleSize 
-%        4) Cauchy distribution: typo in example
-%        5) Chi distribution:   typo in example
-%        6) Non-central F distribution:  number of input parameters
-%        7) INVERSE GAUSSIAN (IG) distribution: typo in example
-%
-%  Version 1.1 - April 2005 -  Bug fix:   Generation from binomial distribution using only 'binomial'
-%                                   usage string was changed to 'binom' ( 'binomial' works too ).
-%  Version 1.0 - March 2005 -  Initial version
-%  Alex Bar Guy  &  Alexander Podgaetsky
-%    alex.barguy@gmail.com
-
-% Copyright (c) 2005, Alex Bar-Guy
-% All rights reserved.
-%
-% Redistribution and use in source and binary forms, with or without
-% modification, are permitted provided that the following conditions are
-% met:
-%
-% * Redistributions of source code must retain the above copyright
-% notice, this list of conditions and the following disclaimer.
-% * Redistributions in binary form must reproduce the above copyright
-% notice, this list of conditions and the following disclaimer in
-% the documentation and/or other materials provided with the distribution
-%
-% THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-% AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-% IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-% ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
-% LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-% CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
-%                       SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
-%                       INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
-% CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
-% ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-% POSSIBILITY OF SUCH DAMAGE.
-
-% Any comments and suggestions please send to:
-%    alex.barguy@gmail.com
 
 % Reference links:
 %   1) http://mathworld.wolfram.com/topics/StatisticalDistributions.html
