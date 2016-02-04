@@ -52,7 +52,7 @@ if prod(sampleSize) > 0
     
     out = -log( rand( sampleSize ) ) / lambda;
   
-end
+end % if prod(sampleSize)>0
 
 varargout{1} = out;
 
