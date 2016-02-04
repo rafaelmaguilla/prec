@@ -1,9 +1,9 @@
 function varargout = randraw(lambda, varargin)
 %
 %   GERADOR DE VARIAVEIS ALEATORIAS COM DISTRIBUICAO EXPONENCIAL
-%   Y = randraw( distribName, distribParams, sampleSize );
+%   Y = randraw(lambda, sampleSize);
 %           retorna um array Y de comprimento = sampleSize de variaveis aleatorias 
-%           com distribuicao distribName com parametros distribParams
+%           com distribuicao exponencial com parametro lambda
 
 %   Referencias:
 %   	1) http://mathworld.wolfram.com/topics/StatisticalDistributions.html
@@ -15,7 +15,7 @@ function varargout = randraw(lambda, varargin)
 funcName = mfilename;
 
 if length(sampleSize) == 1
-     sampleSize = [ sampleSize, 1 ];
+     sampleSize = [sampleSize, 1];
 end
 
 runExample = 0;
@@ -25,8 +25,8 @@ out = [];
 if prod(sampleSize) > 0
     % DISTRIBUICAO EXPONENCIAL
     %
-    % fdp = lambda * exp( -lambda*y );
-    %
+    %  fdp = lambda * exp( -lambda*y );
+    %  
     %  Media = 1/lambda;
     %  Variancia = 1/lambda^2;
     %  Moda = lambda;
@@ -45,12 +45,7 @@ if prod(sampleSize) > 0
     %  2.   y = randraw('exp', 1.5, 1, 1e5);
     %  3.   y = randraw('exp', 2, 1e5 );
     %  4.   y = randraw('exp', 3, [1e5 1] );
-    
-    checkParamsNum(funcName, 'Exponential', 'exp', distribParams, [1]);  
-    lambda  = distribParams(1);
-    validateParam(funcName, 'Exponential', 'exp', 'lambda', 'lambda', lambda, {'> 0'});
-    
-    out = -log( rand( sampleSize ) ) / lambda;
+    out = -log(rand(sampleSize))/lambda;
   
 end
 
@@ -58,18 +53,6 @@ varargout{1} = out;
 
 return;
 
-return;
-
-function checkParamsNum(funcName, distribName, runDistribName, distribParams, correctNum)
-if ~any( numel(distribParams) == correctNum )
-     error('%s Variates Generation:\n %s%s%s%s%s', ...
-          distribName, ...
-          'Wrong numebr of parameters (run ',...
-          funcName, ...
-          '(''', ...
-          runDistribName, ...
-          ''') for help) ');
-end
 return;
 
 function cdf = normcdf(y)
