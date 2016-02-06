@@ -20,9 +20,34 @@ end
 
 runExample = 0;
 plotFlag = 0;
+
 out = [];
 if prod(sampleSize) > 0
-	out = round(-log(rand(sampleSize))/lambda)
+	% DISTRIBUICAO EXPONENCIAL
+	%
+	%  fdp = lambda * exp( -lambda*y );
+	%  
+	%  Media = 1/lambda;
+	%  Variancia = 1/lambda^2;
+	%  Moda = lambda;
+	%  Mediana = log(2)/lambda;
+	%
+	% PARAMETROS:
+	%   lambda
+	%
+	% UTILIZACAO:
+	%   randraw('exp', lambda, sampleSize) - gera um numero sampleSize
+	%         de variaveis com distribuicao exponencial
+	%         com parametro 'lambda';
+	%
+	% EXAMPLOS:
+	%  1.   y = randraw('exp', 1, [1 1e5]);
+	%  2.   y = randraw('exp', 1.5, 1, 1e5);
+	%  3.   y = randraw('exp', 2, 1e5 );
+	%  4.   y = randraw('exp', 3, [1e5 1] );
+	numberList = [-1, 1]
+	out = -log(rand(sampleSize))/lambda;
+  
 end
 
 varargout{1} = out;
