@@ -1,4 +1,4 @@
-function varargout = randraw(lambda, varargin)
+function varargout = randomVariableGenerator(lambda, sampleSize, varargin)
 %
 %   GERADOR DE VARIAVEIS ALEATORIAS COM DISTRIBUICAO EXPONENCIAL
 %   Y = randraw(lambda, sampleSize);

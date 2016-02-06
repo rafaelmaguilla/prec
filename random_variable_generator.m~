@@ -1,4 +1,4 @@
-function varargout = randraw(lambda, varargin)
+function varargout = random_variable_generator(lambda, sampleSize, varargin)
 %
 %   GERADOR DE VARIAVEIS ALEATORIAS COM DISTRIBUICAO EXPONENCIAL
 %   Y = randraw(lambda, sampleSize);
@@ -25,8 +25,8 @@ out = [];
 if prod(sampleSize) > 0
     % DISTRIBUICAO EXPONENCIAL
     %
-    % fdp = lambda * exp( -lambda*y );
-    %
+    %  fdp = lambda * exp( -lambda*y );
+    %  
     %  Media = 1/lambda;
     %  Variancia = 1/lambda^2;
     %  Moda = lambda;
