@@ -22,7 +22,7 @@ runExample = 0;
 plotFlag = 0;
 out = [];
 if prod(sampleSize) > 0
-	out = round(-log(rand(sampleSize))/lambda)
+	out = -log(rand(sampleSize))/lambda
 end
 
 varargout{1} = out;

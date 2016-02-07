@@ -1,10 +1,9 @@
 function varargout = randomVariableGenerator(lambda, sampleSize, varargin)
 %
 %   GERADOR DE VARIAVEIS ALEATORIAS COM DISTRIBUICAO EXPONENCIAL
-%   Y = randraw(lambda, sampleSize);
-%           retorna um array Y de comprimento = sampleSize de variaveis aleatorias 
-%           com distribuicao exponencial com parametro lambda
-
+%   Y = randraw(lambda, sampleSize): retorna um array Y de comprimento = sampleSize de variaveis aleatorias 
+%   com distribuicao exponencial com parametro lambda
+%   No caso, tempos lambda = alpha/(delta t)
 %   Referencias:
 %   	1) http://mathworld.wolfram.com/topics/StatisticalDistributions.html
 %   	2) http://en.wikipedia.org/wiki/Category:Probability_distributions
