@@ -1,10 +1,7 @@
 %Item (d) - Para determinar o atraso entre os sinais vindos de A e B,
 %utilizaremos a funcao circshift do MatLab
 
-%Parametros:
-%	seqA, seqB: sequencias a serem comparadas
-%Saida
-%	delayAB: atraso (em numero de bits) entre seqA e seqB
+%recebe como parametros as sequencias a serem comparadas, o numero N de bits da cadeia e a duracao delta_t de cada bit
 function delayAB = calculate_delay(seqA, seqB) 
 if seqA == seqB
 	delayAB = 0 %se as sequencias sao identicas, então nao ha atraso relativo entre elas

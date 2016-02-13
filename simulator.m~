@@ -3,7 +3,7 @@ function s = simulator(x, alpha, n)
 	% Para garantir sequencias aleatorias identicas,
 	% devemos ter sequencias produzidas a partir da 
 	% mesma semente (vamos "setar" a semente para
-	% o meu numero USP, 8041626, por meio do comando rng)
+	% o meu numero USP, 8041626, por meio do comando rng
 	rng(8041626) 
 	A = randi([0, 1], 1, 3733)
 	rng(8041626)
