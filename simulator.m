@@ -1,4 +1,5 @@
 function s = simulator(x, alpha, n)
+	%Duracao de cada bit, com base numa taxa de transmissao de 56Mbits/s
 	deltaT = 17.857e-9
 	% Para garantir sequencias aleatorias identicas,
 	% devemos ter sequencias produzidas a partir da 
@@ -14,7 +15,7 @@ function s = simulator(x, alpha, n)
 	delayAB = calculateDelay(A, B)
 for index = 1:n
 	newDelayAB = changeSignRandomly(generateRandomVariable(alpha/deltaT, 1))
-	positionArray(i) = calculatePosition(delayAB + newDelayAB)
+	positionArray(index) = calculatePosition(delayAB + newDelayAB)
 end	
 s = mean(positionArray)
 return;

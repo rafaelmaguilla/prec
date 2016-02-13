@@ -9,8 +9,8 @@ function delayAB = calculate_delay(seqA, seqB)
 if seqA == seqB
 	delayAB = 0 %se as sequencias sao identicas, então nao ha atraso relativo entre elas
 else %atrasa a sequencia A um bit de cada vez, ate que ela se iguale a sequencia B
-	for t = 1:length(A)
-		if circshift(seqA, t) == seqB 
+	for t = 1:length(seqA)
+		if circshift(seqA, t, 2) == seqB 
 			delayAB = t %delayAB recebe o valor do atraso em um numero inteiro t de duracao de bits
 			break
 		end
